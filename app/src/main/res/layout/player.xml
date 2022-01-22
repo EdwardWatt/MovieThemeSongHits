@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/player"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:theme="@style/Theme.AppCompat">
+    <ImageView
+        android:id="@+id/moviePosterImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:contentDescription="todo" />
+
+    <TextView
+        android:id="@+id/movieTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="From the Movie: "
+        android:contentDescription="todo" />
+    <TextView
+        android:id="@+id/performerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:text="Performed by: "
+        android:contentDescription="todo" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <Button
+            android:id="@+id/pause"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:drawable/ic_media_pause"
+            android:onClick="musicPauseButton" />
+        <Button
+            android:id="@+id/start"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@android:drawable/ic_media_play"
+            android:onClick="musicPlayButton" />
+        <Button
+            android:id="@+id/stop"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:drawable/ic_delete"
+            android:onClick="musicStopButton" />
+    </LinearLayout>
+</LinearLayout>
