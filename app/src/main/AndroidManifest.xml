@@ -10,24 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieThemeSongHits">
         <activity
+            android:label="All Songs"
             android:name=".CatalogActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
+            android:label="Play Lists"
             android:name=".PlaylistActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
+            android:label="John Williams Collection"
             android:name=".JohnWilliamsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".PlaylistActivity"/>
         <activity
+            android:label="Muscials"
             android:name=".MusicalListActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".PlaylistActivity"/>
         <activity
+            android:label="Eds Favorites"
             android:name=".FavoriteActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
         <activity
+            android:label="The Music Player"
             android:name=".PlayerActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
+            android:label="Movie Theme Music Player"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
