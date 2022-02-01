@@ -2,13 +2,13 @@ package android.example.com.moviethemesonghits;
 public class SongInfo {
     private String mMovieTitle;
     private String mArtistComposer;
-    private int mMediaSong;
-    private int mMediaPic;
-    public SongInfo(String movieTitle, String artistComposer, int MediaSong, int MediaPic){
+    private int mReleaseYear;
+    private boolean mFavorite;
+    public SongInfo(String movieTitle, String artistComposer, int ReleaseYear, boolean Favorite){
         mMovieTitle = movieTitle;
         mArtistComposer = artistComposer;
-        mMediaSong = MediaSong;
-        mMediaPic = MediaPic;
+        mReleaseYear = ReleaseYear;
+        mFavorite = Favorite;
     }
     public String getMovieTitle(){
         return mMovieTitle;
@@ -16,10 +16,10 @@ public class SongInfo {
     public String getArtistComposer(){
         return mArtistComposer;
     }
-    public int getMediaSong(){
-        return mMediaSong;
+    public int getReleaseYear(){
+        return mReleaseYear;
     }
-    public int getMediaPic(){
-        return mMediaPic;
+    public boolean getFavorite(){
+        return mFavorite;
     }
 }

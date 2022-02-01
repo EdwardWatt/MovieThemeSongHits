@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 public class JohnWilliamsActivity extends AppCompatActivity {
     @Override
@@ -13,11 +15,11 @@ public class JohnWilliamsActivity extends AppCompatActivity {
         setContentView(R.layout.music_list_layout);
         //Declare Custom Arraylist
         ArrayList<SongInfo> allSongs = new ArrayList<SongInfo>();
-        allSongs.add(new SongInfo("Star Wars", "John Williams", R.raw.starwars, R.drawable.starwars));
-        allSongs.add(new SongInfo("Indiana Jones", "John Williams", R.raw.indianajones, R.drawable.indianajones));
-        allSongs.add(new SongInfo("Jaws", "John Williams", R.raw.jaws, R.drawable.jaws));
-        allSongs.add(new SongInfo("Superman", "John Williams", R.raw.superman, R.drawable.superman));
-        allSongs.add(new SongInfo("Schindler's List", "John Williams", R.raw.schindlerslist, R.drawable.schindlerslist));
+        allSongs.add(new SongInfo("Space Fights", "William Johns", 1977, true));
+        allSongs.add(new SongInfo("Dino Land: Theme Park", "William Johns", 1993, true));
+        allSongs.add(new SongInfo("Fedora Man", "William Johns", 1981, true));
+        allSongs.add(new SongInfo("Super Person", "William Johns", 1978, true));
+        allSongs.add(new SongInfo("Shopping List", "William Johns", 1993, false));
         // Create an {@link SongInfoAdapter}, whose data source is a list of {@link Songs}s. The
         // adapter knows how to create list items for each item in the list.
         SongInfoAdapter adapter = new SongInfoAdapter(this, allSongs);
@@ -32,15 +34,21 @@ public class JohnWilliamsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //When Item is click, We start the process to open Player, we use item click position to figure out which song to play
+                //When Item is click, We start the process to display which song was tapped
                 SongInfo song = allSongs.get(position);
-                //Create intent and transfer Extras from this intent to the player intent, then start the player
-                Intent i = new Intent(JohnWilliamsActivity.this, PlayerActivity.class);
-                i.putExtra("Movie", song.getMovieTitle());
-                i.putExtra("Composer", song.getArtistComposer());
-                i.putExtra("Song", song.getMediaSong());
-                i.putExtra("Pic", song.getMediaPic());
-                startActivity(i);
+                //Display the Movie Title
+                CharSequence TitleText = "You Picked: " + song.getMovieTitle();
+                Toast.makeText(getApplicationContext(), TitleText, Toast.LENGTH_LONG).show();
+                //Display the Artitst
+                CharSequence ArtistText = "Performed by:  " + song.getArtistComposer();
+                Toast.makeText(getApplicationContext(), ArtistText, Toast.LENGTH_LONG).show();
+                //Display the year it was released in
+                CharSequence ReleaseText = "Movie Released in " + song.getReleaseYear();
+                Toast.makeText(getApplicationContext(), ReleaseText, Toast.LENGTH_LONG).show();
+                //Find out if its a favorite
+                CharSequence FavoriteText = "This song is not a Favorite";
+                if (song.getFavorite()!=false){FavoriteText = "This song is in Your Favorites";}
+                Toast.makeText(getApplicationContext(), FavoriteText, Toast.LENGTH_LONG).show();
             }
         });
     }

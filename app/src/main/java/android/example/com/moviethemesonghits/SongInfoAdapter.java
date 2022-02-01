@@ -49,8 +49,8 @@ public class SongInfoAdapter extends ArrayAdapter<SongInfo> {
         // Get the composer from the current SongInfo object and
         // set this text on the artist TextView
         artistTextView.setText(currentSong.getArtistComposer());
-        ImageView poster = (ImageView) listItemView.findViewById(R.id.moviePosterImageView);
-        poster.setImageResource(currentSong.getMediaPic());
+        TextView releaseTextView = (TextView) listItemView.findViewById(R.id.movieReleaseTextView);
+        releaseTextView.setText("" + currentSong.getReleaseYear());
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
         return listItemView;

@@ -25,7 +25,7 @@
             android:exported="false"
             android:parentActivityName=".PlaylistActivity"/>
         <activity
-            android:label="Muscials"
+            android:label="Musicals"
             android:name=".MusicalListActivity"
             android:exported="false"
             android:parentActivityName=".PlaylistActivity"/>
@@ -35,16 +35,11 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"/>
         <activity
-            android:label="The Music Player"
-            android:name=".PlayerActivity"
-            android:exported="false"/>
-        <activity
             android:label="Movie Theme Music Player"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
